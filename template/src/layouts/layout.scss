@@ -1,0 +1,12 @@
+.container {
+  :global {
+    .logo { margin: 16px; height: 32px; line-height: 32px; color: #fff; background: rgba(255, 255, 255, 0.3); text-align: center; }
+    .ant-layout-header {border-bottom: 1px solid #efefef;}
+    .ant-breadcrumb {margin: 10px 0;}
+    .site-layout {
+    }
+  }
+  .header {}
+  .content {}
+  .footer {}
+}

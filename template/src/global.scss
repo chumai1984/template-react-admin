@@ -1,0 +1,84 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+#root {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+.f12 {
+  font-size: 12px;
+}
+.f13 {
+  font-size: 13px;
+}
+.f14 {
+  font-size: 14px;
+}
+.f16 {
+  font-size: 16px;
+}
+.f18 {
+  font-size: 18px;
+}
+.f20 {
+  font-size: 20px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.highlight {
+  color: red;
+}
+:global {
+  .ant-layout { background: #fff;}
+  .ant-layout-header { background: transparent; padding: 0 15px;}
+  .ant-layout-content { padding: 0 15px;}
+  .ant-menu-item .ant-menu-item-icon, .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
+    margin-right: 16px!important;
+  }
+}

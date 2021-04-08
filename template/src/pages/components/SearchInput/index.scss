@@ -1,0 +1,23 @@
+.searchInput {
+    :global {
+      .ant-input-affix-wrapper .ant-input-suffix { right: 6px;}
+      .ant-input-affix-wrapper .ant-input-prefix :not(.anticon), .ant-input-affix-wrapper .ant-input-suffix :not(.anticon) {
+        line-height: 24px;
+      }
+        .suffix,.search {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            background-color: #ffffff;
+            cursor: pointer;
+          &:hover {
+            svg { color: #1989fa;}
+          }
+        }
+        .sreen,
+        .history {
+            position: relative;
+        }
+    }
+}

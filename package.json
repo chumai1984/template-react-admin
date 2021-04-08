@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@ant-design/icons": "^4.5.0",
+    "@ant-design/pro-layout": "^6.15.0",
+    "path-to-regexp": "^6.2.0",
+    "prop-types": "^15.7.2"
+  }
+}

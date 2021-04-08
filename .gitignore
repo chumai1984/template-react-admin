@@ -1,0 +1,4 @@
+.DS_Store
+.git
+node_modules
+template/node_modules
