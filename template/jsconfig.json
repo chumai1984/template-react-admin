@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "noLib": false,
+      // "target": "esnext",
+      "checkJs": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@@/*": ["src/.umi/*"]
+      }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist", "src/.umi/**/*"]
+  }
+  
