@@ -1,6 +1,8 @@
 import {GetUserInfoByToken } from '@/services/api';
-import router from 'umi/router';
-import Cookies from 'js-cookie'
+import {history} from 'umi';
+import Cookies from 'js-cookie';
+import configData from '@/utils/config';
+const {PROXY_URL} = configData;
 
 const Model = {
   namespace: 'global',
@@ -31,7 +33,7 @@ const Model = {
       setTimeout(_=> {
         Cookies.remove('token', { path: '/' })
         if (process.env.NODE_ENV == 'development') {
-          router.push('/user/login')
+          history.push('/user/login')
         }
         else {
           // @ts-ignore

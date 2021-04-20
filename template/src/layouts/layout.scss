@@ -1,7 +1,8 @@
 .container {
   :global {
     .logo { margin: 16px; height: 32px; line-height: 32px; color: #fff; background: rgba(255, 255, 255, 0.3); text-align: center; }
-    .ant-layout-header {border-bottom: 1px solid #efefef;}
+    .ant-layout-header {border-bottom: 1px solid #efefef; color: #fff;}
+    .ant-layout-content { padding: 0 24px;}
     .ant-breadcrumb {margin: 10px 0;}
     .site-layout {
     }

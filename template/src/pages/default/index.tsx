@@ -3,7 +3,7 @@ import styles from './index.scss';
 import { connect } from 'dva';
 import { Button, Spin, Divider, Typography } from 'antd';
 import { WIcon } from '@/utils/tool';
-import router from 'umi/router';
+import {history} from 'umi';
 import Cookies from 'js-cookie';
 
 import PptList from '../components/PptList';
@@ -42,7 +42,7 @@ class contentView extends React.Component<any> {
 
   // 路由跳转
   jump = (id) => {
-    router.push(`/content/${id}`);
+    history.push(`/content/${id}`);
   };
 
 

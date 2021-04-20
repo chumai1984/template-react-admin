@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from "dva";
+// inbiz-tool引入及使用
+import {isArray, isObject, isEmoptyObject, isBoolean, array, date, math, tool} from 'inbiz-toolkit';
 
 class searchView extends React.Component<any>{
   state = {
@@ -10,7 +12,12 @@ class searchView extends React.Component<any>{
 
   render() {
     return (
-      <div> pageAAA html~ </div>
+      <div>
+        pageAAA html~ 
+        <p>
+           {JSON.stringify(math.divs(4.5, 2,3,4,5,5,8))}
+         </p>
+      </div>
     );
   }
 }

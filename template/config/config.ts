@@ -3,7 +3,6 @@ import { resolve } from 'path';
 export const proxyURL = 'http://172.16.0.118:31000';
 
 const config: IConfig = {
-  treeShaking: true,
   routes: [
     {
       path: '/user',
@@ -62,27 +61,12 @@ const config: IConfig = {
       ],
     },
   ],
-  plugins: [
-    [
-      'umi-plugin-react',
-      {
-        antd: true,
-        dva: true,
-        dynamicImport: false,
-        title: 'template-react-web',
-        dll: false,
-        routes: {
-          exclude: [
-            /models\//,
-            /services\//,
-            /model\.(t|j)sx?$/,
-            /service\.(t|j)sx?$/,
-            /components\//,
-          ],
-        },
-      },
-    ],
-  ],
+  antd: {},
+  dva: {
+    immer: true, // 开启dva-immer，用于代理currentState和nextState之间的改变，即当前状态修改副本
+    hmr: true, // 开启模块热加载(热更新)
+  },
+  dynamicImport: false,
   targets: {
     ie: 9,
   },
@@ -102,8 +86,10 @@ const config: IConfig = {
       changeOrigin: true,
     },
   },
-  publicPath: '',
-  history: 'hash',
+  publicPath: '/',
+  history: {
+    type: 'hash'
+  },
   ignoreMomentLocale: true, // 忽略 moment 的 locale 文件，用于减少尺寸
 };
 export default config;

@@ -29,14 +29,14 @@ class BasicLayout extends React.Component<any> {
           return (
             <SubMenu title={
               <Fragment>
-                 <WIcon type={item.icon} /> {collapsed ? '' : item.name}
+                 <WIcon type={item.icon || ' '} /> {collapsed ? '' : item.name}
               </Fragment>
             } key={`${item.name}-${item.path}-${index}`}>
               {this.renderMenu(item.routes, false)}
             </SubMenu>
           )
         }
-        return <Menu.Item title={item.name} key={`${item.name}-${item.path}-${index}`}><Link to={item.path}><WIcon type={item.icon} /> {collapsed ? '' : item.name}</Link></Menu.Item>
+        return <Menu.Item title={item.name} key={`${item.name}-${item.path}-${index}`}><Link to={item.path}><WIcon type={item.icon || ' '} /> {collapsed ? '' : item.name}</Link></Menu.Item>
       }
     })
   }
