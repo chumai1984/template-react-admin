@@ -8,7 +8,6 @@ body {
   margin: 0 auto;
   padding: 0;
   background: #fff;
-  overflow: hidden;
 }
 
 #root {
@@ -74,10 +73,14 @@ li {
 .highlight {
   color: red;
 }
+.flex {
+  display: flex;
+  .grid { flex: 1}
+}
+.cursor {
+  cursor: pointer;
+}
 :global {
-  .ant-layout { background: #fff;}
-  .ant-layout-header { background: transparent; padding: 0 15px;}
-  .ant-layout-content { padding: 0 15px;}
   .ant-menu-item .ant-menu-item-icon, .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-item .anticon, .ant-menu-submenu-title .anticon {
     margin-right: 16px!important;
   }

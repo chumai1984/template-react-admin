@@ -1,5 +1,5 @@
 const Model = {
-  namespace: 'pageB',
+  namespace: 'basicInfo',
   state: {
    flag:true,
   },

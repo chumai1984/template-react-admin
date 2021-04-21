@@ -1,6 +1,5 @@
 import { createFromIconfontCN } from '@ant-design/icons';
-import config from '@/utils/config';
-const { PUBLIC_PATH } = config
+import { PUBLIC_PATH } from '@/utils/config';
 
 export const WIcon = createFromIconfontCN({
   scriptUrl: `${PUBLIC_PATH}/ifont/iconfont.js`,

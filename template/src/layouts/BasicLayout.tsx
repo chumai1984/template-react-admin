@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import {connect} from 'dva';
 import { Layout, Menu } from 'antd';
+import {MenuFoldOutlined, MenuUnfoldOutlined} from '@ant-design/icons';
 import { Link } from 'umi';
-import styles from './layout.scss';
+import styles from './layout.less';
 import {WIcon} from '../utils/tool';
 import AvatarDropdown from '@/components/AvatarDropdown/index'
 
@@ -12,14 +13,22 @@ const { SubMenu } = Menu;
 
 class BasicLayout extends React.Component<any> {
   state = {
-    collapsed: false,
   };
 
   componentDidMount() {
   }
 
   onCollapse = collapsed => {
-    this.setState({ collapsed });
+    const {dispatch} = this.props
+    dispatch({
+      type: 'global/updateState',
+      payload: {
+        layout: {
+          collapsed,
+          width: collapsed ? 80 : 200
+        }
+      }
+    })
   };
 
   renderMenu = (menuData, collapsed) => {
@@ -43,21 +52,25 @@ class BasicLayout extends React.Component<any> {
 
 
   render() {
-    const { collapsed } = this.state;
-    const {children, route} = this.props
+    // const { collapsed, collapsedWidth } = this.state;
+    const {children, route, global} = this.props
     const {routes} = route
+    const {layout: {collapsed, width}} = global
 
     return (
       <Layout style={{ minHeight: '100vh' }} className={styles.container}>
-        <Sider className={styles.sider} collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
+        <Sider className={styles.sider} collapsible collapsed={collapsed} width={width} onCollapse={this.onCollapse}>
           <div className="logo">Inbiz</div>
           <Menu theme="dark" defaultSelectedKeys={['0']} mode="inline">
             {this.renderMenu(routes, collapsed)}
           </Menu>
         </Sider>
 
-        <Layout className="site-layout">
-          <Header className="align-right"><AvatarDropdown /></Header>
+        <Layout className="site-layout" style={{marginLeft: width, transition: 'all 0.2s'}}>
+          <Header className="flex" style={{left: width, transition: 'all 0.2s'}}>
+            <div className="grid cursor"><span className={styles.collapsed} onClick={() => this.onCollapse(!collapsed)}>{collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}</span></div>
+            <div className="grid align-right"><AvatarDropdown /></div>
+          </Header>
 
           <Content>
             {children}

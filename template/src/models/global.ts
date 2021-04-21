@@ -1,8 +1,7 @@
 import {GetUserInfoByToken } from '@/services/api';
 import {history} from 'umi';
 import Cookies from 'js-cookie';
-import configData from '@/utils/config';
-const {PROXY_URL} = configData;
+import { PROXY_URL } from '@/utils/config';
 
 const Model = {
   namespace: 'global',
@@ -11,6 +10,10 @@ const Model = {
       Avatar: '',
       Name: 'admin'
     },
+    layout: {
+      collapsed: false,
+      width: 200,
+    }
   },
   effects: {
     // 获取用户信息

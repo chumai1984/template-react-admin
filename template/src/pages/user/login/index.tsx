@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from "dva";
 import { Form, Input, Button } from 'antd';
-import config from '@/utils/config'
+import { PROXY_URL } from '@/utils/config'
 import Cookies from 'js-cookie';
-import styles from './index.scss';
+import styles from './index.less';
 
 class loginView extends React.Component {
 
@@ -29,7 +29,7 @@ class loginView extends React.Component {
               <Input placeholder="请输入token进行登录" />
             </Form.Item>
             <Form.Item className='align-center'>
-              <div className={'text-center pointer'}>进入站点：<a target={'_blank'} href={config && config.PROXY_URL}>{config && config.PROXY_URL}</a></div>
+              <div className={'text-center pointer'}>进入站点：<a target={'_blank'} href={PROXY_URL}>{PROXY_URL}</a></div>
             </Form.Item>
             <Form.Item className='align-center'>
               <Button htmlType="submit" type='primary'>登录</Button>

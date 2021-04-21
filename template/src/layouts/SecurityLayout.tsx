@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import PageLoading from '@/components/PageLoading';
 import Cookies from 'js-cookie';
-import config from '@/utils/config';
+import { NODE_ENV } from '@/utils/config';
 import { history } from 'umi';
 import {getSearchString} from '@/utils/tool'
 
@@ -47,7 +47,7 @@ class SecurityLayout extends React.Component<any> {
 
   // 未登录/过期 开发环境与生产环境业务逻辑
   envJump = () => {
-    if (config.NODE_ENV == 'development') {
+    if (NODE_ENV == 'development') {
       return history.push({
         pathname: '/user/login',
         query: {redirect: window.location.href}

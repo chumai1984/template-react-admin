@@ -1,5 +1,5 @@
 const Model = {
-  namespace: 'pageA',
+  namespace: 'myApp',
   state: {
    flag:true,
   },

@@ -1,11 +1,10 @@
 import { Avatar, Menu, Spin, Dropdown } from 'antd';
-import {LogoutOutlined} from '@ant-design/icons';
+import {LogoutOutlined, HomeOutlined, ProfileOutlined} from '@ant-design/icons';
 import React from 'react';
 import { connect } from 'dva';
 import { history } from 'umi';
-import configData from '@/utils/config';
-const {PROXY_URL} = configData;
-import styles from './index.scss';
+import {PROXY_URL} from '@/utils/config';
+import styles from './index.less';
 
 
 class AvatarDropdown extends React.Component<any> {
@@ -28,6 +27,14 @@ class AvatarDropdown extends React.Component<any> {
 
     const menuHeaderDropdown = (
       <Menu selectedKeys={[]} onClick={this.onMenuClick}>
+        <Menu.Item key="default">
+          <HomeOutlined />
+          首页 
+        </Menu.Item>
+        <Menu.Item key="demo/basic-info">
+          <ProfileOutlined />
+          个人中心 
+        </Menu.Item>
         <Menu.Item key="logout">
           <LogoutOutlined />
           退出登录
@@ -37,7 +44,7 @@ class AvatarDropdown extends React.Component<any> {
     return userInfo && userInfo.Name ? (
       <Dropdown className={styles.menu} overlay={menuHeaderDropdown}>
         <span>
-          <Avatar size="small" src={`${PROXY_URL}${userInfo.Avatar}`} alt="avatar" />
+          <Avatar src={`${PROXY_URL}${userInfo.Avatar}`} alt="avatar" />
           <span>{userInfo.Name}</span>
         </span>
       </Dropdown>

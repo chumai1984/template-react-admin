@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.scss';
+import styles from './index.less';
 import { connect } from 'dva';
 import { Button, Spin, Divider, Typography } from 'antd';
 import { WIcon } from '@/utils/tool';
@@ -68,17 +68,17 @@ class contentView extends React.Component<any> {
         <Title level={3}>简介</Title>
           <Paragraph>
             <dl>
-              <dd><strong>基于umi + dva + antd，高性能，开发启动快，兼容IE10+，TypeScript支持~</strong></dd>
-              <dd>Umi[^2.x版本] 实现了完整的生命周期，并使其插件化，内置了路由、构建、部署、测试等。</dd>
-              <dd>Dva 基于redux和redux-saga的数据流方案。</dd>
+              <dd><strong>技术栈基于es2015+、react、umi、dva、antd和umi-request，高性能，开发启动快，兼容IE10+，TypeScript支持~，请求数据都可使用Mock.js进行模拟，提前了解和学习这些知识会对使用本项目有很大的帮助。</strong></dd>
+              <dd>Umi[^3.x版本] 实现了完整的生命周期，并使其插件化，内置了路由、构建、部署、测试等。</dd>
+              <dd>Dva[next版本] 基于redux和redux-saga的数据流方案。</dd>
               <dd>Antd[^4.x版本]</dd>
-              <dd>引入常用库：lodash，js-cookie，moment</dd>
+              <dd>引入常用库：lodash，moment，inbiz-toolkit</dd>
 
               <dd></dd><br />
               <dd>简单配置，快速上手</dd>
               <dd>启动项目 yarn && yarn start 或者 npm install && npm run start</dd>
               <dd>1、/config/config 配置代理URL => proxyURL，（调通API接口，对接后台数据）</dd>
-              <dd>2、/config/config 配置路由 => routes （添加路由，添加页面，正式项目开发）</dd>
+              <dd>2、/config/routes 配置路由 => routes （添加路由，添加页面，正式项目开发）</dd>
             </dl>
           </Paragraph>
         </Typography>
